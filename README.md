@@ -1,3 +1,0 @@
-#HEAD
-##TEST
-###Compare
