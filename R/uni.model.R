@@ -17,7 +17,7 @@
 #' data <- uni.model(data1,data2,TX, ref=1, noa="3arm", parameters="simple")
 #' data
 #'
-#' @return mnma.model object for mnma.bugs operation
+#' @return mnma.model object for mnma.run operation
 #' @keywords internal
 
 
