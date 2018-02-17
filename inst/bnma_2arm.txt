@@ -1,0 +1,85 @@
+model{
+
+# this controls for studies with one outcome not reported by setting the correlation equal to 
+# zero
+
+for (k in 1:(2*NS-N2h)){control[k]<-step(9999-var1[k])*step(9999-var2[k])}
+
+# two-arm studies
+
+	for( i in 1:N2h){
+	s[i,1,1]<-var1[i]+psi1.sq
+	s[i,2,2]<-var2[i]+psi2.sq
+	s[i,1,2]<-control[i]*rho1*sqrt(var1[i]+psi1.sq)*sqrt(var2[i]+psi2.sq)
+	s[i,2,1]<-s[i,1,2]
+	prec2A[i,1:2,1:2]<-inverse(s[i,,])
+	y[(2*i-1):(2*i)]~dmnorm(mean[(2*i-1):(2*i)],prec2A[i,,])
+	}
+
+    # Parameterization of the means
+
+	for(i in 1:N2h) {                   
+		mean[2*i-1] <- dOUT1[T2[i]] - dOUT1[T1[i]]
+		mean[2*i]   <- dOUT2[T2[i]] - dOUT2[T1[i]]
+		}
+
+	
+   # Priors		
+    
+    for(k in 1:(ref-1)) {	dOUT1[k] ~ dnorm(0,.0001)}
+    for(k in (ref+1):NT) {dOUT1[k] ~ dnorm(0,.0001)}	
+    for(k in 1:(ref-1)) {	dOUT2[k] ~ dnorm(0,.0001)}
+    for(k in (ref+1):NT) {dOUT2[k] ~ dnorm(0,.0001)}			
+    psi1.sq <- psi1*psi1
+    psi1~dunif(0,2)
+    psi2.sq <- psi2*psi2
+    psi2~dunif(0,2)
+	rho1~dunif(-1,1)
+
+    #Estimated  Effect Sizes
+    
+    dOUT1[ref]<- 0
+    for (c in 1:(ref-1)) { Eff.ref.O1[c]<- exp(dOUT1[c] - dOUT1[ref] )} 
+    for (c in (ref+1):NT) { Eff.ref.O1[c]<- exp(dOUT1[c] - dOUT1[ref] )	} 
+    for (c in 1:(NT-1)) {
+      for (k in (c+1):NT) {
+ 	ddOUT1[c,k] <- (dOUT1[k] - dOUT1[c])
+        Eff.O1[c,k] <- exp(dOUT1[k] - dOUT1[c])}}
+    
+    dOUT2[ref]<- 0
+    for (c in 1:(ref-1)) { Eff.ref.O2[c]<- exp(dOUT2[c] - dOUT2[ref] )} 
+    for (c in (ref+1):NT) { Eff.ref.O2[c]<- exp(dOUT2[c] - dOUT2[ref] )	} 
+    for (c in 1:(NT-1)) {  
+      for (k in (c+1):NT) { 
+	ddOUT2[c,k] <- (dOUT2[k] - dOUT2[c])
+        Eff.O2[c,k] <- exp(dOUT2[k] - dOUT2[c]) }}		
+
+## SUCRA rankings
+
+	# Ranking of treatments for response------------------ 
+	
+	for(k in 1:NT) {
+		orderO1[k]<- NT+1-rank(dOUT1[],k)		
+	most.effectiveO1[k]<-equals(orderO1[k],1)
+
+	for(j in 1: NT) {
+	effectivenessO1[k,j]<- equals(orderO1[k],j)
+			cumeffectivenessO1[k,j]<- sum(effectivenessO1[k,1:j])}}
+	
+	for(k in 1:NT) {
+	SUCRAR[k]<- sum(cumeffectivenessO1[k,1:( NT-1)]) /(NT-1)}	
+
+	#Ranking of treatments for dropout--------------------
+
+	for(k in 1:NT) {
+		orderO2[k]<- rank(dOUT2[],k)		
+		most.effectiveO2[k]<-equals(orderO2[k],1)
+
+	for(j in 1: NT) {
+		effectivenessO2[k,j]<- equals(orderO2[k],j)
+		cumeffectivenessO2[k,j]<- sum(effectivenessO2[k,1:j])}}	
+
+	for(k in 1:NT) {
+	SUCRAD[k]<- sum(cumeffectivenessO2[k,1:( NT-1)]) /(NT-1)}
+
+}
