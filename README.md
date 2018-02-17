@@ -5,17 +5,18 @@
 Let's write down to explain this function and how to run it. 
 
 ---
-** This is bold **  
-* This is Italic *  
+**This is bold**
+
+*This is Italic*
+
 Two space after the sentence is the line change. 
 ---
-COMMAND TYPE: 'ls -a'  
+COMMAND TYPE: `ls -a in grey space`  
 
 To insert the code you use the apostrophe.
-
-'''
+```
 example(mnma)
-'''
+```
 
 For bullet points: 
 
