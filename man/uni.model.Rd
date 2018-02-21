@@ -25,15 +25,4 @@ mnma.model object for mnma.run operation
 \description{
 The function creates a data frame for bugs operation, using outcome 1, outcome 2, and treatments inputs
 }
-\examples{
-data(acute)
-# Split the dataset
-data1 <- acute[,c(1:6)]     # outcome1
-data2 <- acute[,c(7:12)]    # outcome2
-TX    <- acute[,13:15]
-# Convert them into log odds ratio inputs
-data <- uni.model(data1,data2,TX, ref=1, noa="3arm", parameters="simple")
-data
-
-}
 \keyword{internal}

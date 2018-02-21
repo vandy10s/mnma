@@ -39,6 +39,10 @@ res$summary
 
 
 }
+\references{
+Efthimiou et al. (2015) Biostatistics 16(1):84-97
+(\href{https://www.ncbi.nlm.nih.gov/pubmed/24992934}{PubMed})
+}
 \seealso{
 \code{\link{bugs}}
 }

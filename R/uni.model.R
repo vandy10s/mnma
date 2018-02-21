@@ -6,29 +6,18 @@
 #' @param noa Maximum number of arms in the trial studies.
 #' @param ref reference treatment numbers in the analysis
 #' @param parameters 'simple' or 'details' list of parameters.
-#' @export
-#' @examples
-#' data(acute)
-#' # Split the dataset
-#' data1 <- acute[,c(1:6)]     # outcome1
-#' data2 <- acute[,c(7:12)]    # outcome2
-#' TX    <- acute[,13:15]
-#' # Convert them into log odds ratio inputs
-#' data <- uni.model(data1,data2,TX, ref=1, noa="3arm", parameters="simple")
-#' data
-#'
 #' @return mnma.model object for mnma.run operation
 #' @keywords internal
 
 
 uni.model <- function(data1, data2, TX, noa = "3arm", ref = 1, parameters = "simple"){
-  
+
   if (noa=="3arm"){
-    
+
     # warnings about the dimensions
-    
+
     colnames(TX) <- c("T1", "T2", "T3")
-    
+
     # transfomrm as events and failures then Add 0.5 for 0 cells -----------------------------
     out1 <- mnma:::add.half.3arm(data1)
     out2 <- mnma:::add.half.3arm(data2)
@@ -62,15 +51,15 @@ uni.model <- function(data1, data2, TX, noa = "3arm", ref = 1, parameters = "sim
     input1 <- list(NS=NS,N2h=N2h,NT=NT,ref=ref,T1=T1,T2=T2,T3=T3,y=y1,var=var1)
     input2 <- list(NS=NS,N2h=N2h,NT=NT,ref=ref,T1=T1,T2=T2,T3=T3,y=y2,var=var2)
   }
-  
+
   #====================================================================================================
-  
+
   if (noa=="2arm"){
-    
+
     # warnings about the dimensions
-    
+
     colnames(TX) <- c("T1", "T2")
-    
+
     # transfomrm as events and failures then Add 0.5 for 0 cells -----------------------------
     out1 <- mnma:::add.half.2arm(data1)
     out2 <- mnma:::add.half.2arm(data2)
@@ -105,7 +94,7 @@ uni.model <- function(data1, data2, TX, noa = "3arm", ref = 1, parameters = "sim
     var2 <- out2$var
     input2 <- list(NS=NS,N2h=N2h,NT=NT,ref=ref,T1=T1,T2=T2,y=y2,var=var2)
   }
-  
+
   if (parameters=="simple"){
     parameters <- c( "dOUT1", "psi1")
   } else if (parameters=="detail"){
@@ -113,7 +102,7 @@ uni.model <- function(data1, data2, TX, noa = "3arm", ref = 1, parameters = "sim
   } else if (parameters!="detail" & parameters!="simple"){
     stop("Choose either 'simple' or 'detail' for the list of parameters")
   }
-  
+
   source <- list(data1 = input1, data2 = input2, parameters = parameters, noa=noa)
   class(source) <- "mnma.model"
   return(source)

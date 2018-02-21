@@ -10,6 +10,8 @@
 #' @param codaPkg if FALSE (default) a bugs object is returned. (See and check \code{\link{bugs}})
 #' @import R2OpenBUGS
 #' @export
+#' @references Efthimiou et al. (2015) Biostatistics 16(1):84-97
+#' (\href{https://www.ncbi.nlm.nih.gov/pubmed/24992934}{PubMed})
 #' @seealso \code{\link{bugs}}
 #' @return mnma.result class bugs summary result
 #' @examples \dontrun{
@@ -24,17 +26,17 @@
 mnma.run <- function(input, inits=NULL, n.iter=5000, n.burnin=2000, n.chains=1, n.thin=1, debug=FALSE, codaPkg=FALSE){
 
   input <- input$multivariate
-  
+
   if (input$noa=="3arm"){
     models = model.file = system.file("bnma_3arm.txt",package="mnma")  # Fix the location
   } else if (input$noa=="2arm"){
     models = model.file = system.file("bnma_2arm.txt",package="mnma")  # Fix the location
   }
-  
+
   if ( class(input) == "mnma.model"){
 
     data <- as.list(input$data)
-    
+
     out.mul <- bugs(data=data,
                     inits=inits,
                     parameters.to.save= input$parameters,
@@ -47,7 +49,7 @@ mnma.run <- function(input, inits=NULL, n.iter=5000, n.burnin=2000, n.chains=1, 
                     codaPkg=codaPkg,
                     DIC = FALSE  # To have the results, we need to set this off.
     )
-    
+
     class(out.mul) <- "mnma.result"
   }else{
     stop("Input data have to be 'mnma.model' class ")

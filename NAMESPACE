@@ -2,7 +2,5 @@
 
 export(mnma.model)
 export(mnma.run)
-export(mul.model)
-export(uni.model)
 export(unma.run)
 import(R2OpenBUGS)
