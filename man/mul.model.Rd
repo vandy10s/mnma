@@ -20,7 +20,7 @@ mul.model(data1, data2, TX, noa = "3arm", ref = 1, parameters = "simple")
 \item{parameters}{'simple' or 'details' list of parameters.}
 }
 \value{
-mnma.model object for mnma.bugs operation
+mnma.model object for mnma.run operation
 }
 \description{
 The function creates a data frame for bugs operation, using outcome 1, outcome 2, and treatments inputs
