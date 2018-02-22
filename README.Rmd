@@ -43,7 +43,7 @@ outcome2 <- acute[,c(7:12)]    # outcome2
 TX    <- acute[,13:15]
 ```
 
-*2. Convert data *
+*2. Convert data*
 
 `mnma.model` function converts outcome data into log odds ratio (OR) inputs and arrange them for multivariate NMA.  
 
@@ -51,7 +51,7 @@ TX    <- acute[,13:15]
 data <- mnma.model(outcome1,outcome2,TX, ref=1, parameters="simple")
 ```
 
-*3. Run multivariate NMA using `mnma.run` function and check the result *
+*3. Run multivariate NMA using `mnma.run` function and check the result*
 
 Adjust options in the function in the similar way as OpenBUGS. Type `res$summary` after running the function to check the summarized results. The BUGS code is executed automatically depending on the condition of inputs. 
 
@@ -59,7 +59,7 @@ Adjust options in the function in the similar way as OpenBUGS. Type `res$summary
 res <- mnma.run(data, n.iter=3000, n.burnin=1000)
 ```
 
-*4. Similarly, run univariate NMA using `unma.run` function and compare results with those from multivariate NMA model. *
+*4. Similarly, run univariate NMA using `unma.run` function and compare results with those from multivariate NMA model.*
 
 
 
