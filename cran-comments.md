@@ -1,16 +1,21 @@
-## Test environments
+# Test environments
 
-* Windows 10 with the OpenBUGS installed
+#### Windows 10 with the OpenBUGS installed
 
-## R CMD check results
-There were no Errors or WARNINGs.
-There were 2 NOTE: Details are below
+# R CMD check results
+
+#### There were no Errors or WARNINGs.
+#### There were 2 NOTE: Details are below
+
+* 1st NOTE : Using ':::' in the code is personally preferred to distinguish them from other functions. 
 
 There are ::: calls to the package's namespace in its code. A package
   almost never needs to use ::: for its own objects:
   'add.half.2arm' 'add.half.3arm' 'cont.trans' 'cont.trans.2arm'
   'gen.y' 'gen.y.2arm' 'mul.model' 'sortbyna' 'sortbyna.2arm'
   'tx.check' 'uni.model'
+
+* 2nd NOTE
 
 checking R code for possible problems ... NOTE
 cont.trans: no visible global function definition for 'glm'
