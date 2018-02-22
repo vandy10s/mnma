@@ -8,7 +8,7 @@ mnma.model(outcome1, outcome2, TX, noa = "3arm", ref = 1,
   parameters = "simple")
 }
 \arguments{
-\item{outcome1}{A data frame for outcome 1. First 2 (or 3) columns contain the information about number of events for each arm and the rest 2 (or 3) colums contain the sample size for each arm. Number of columns ranges from 2 to 3, depending on the number of maximum arms in the trial data.}
+\item{outcome1}{A data frame for outcome 1. First 2 (or 3) columns contain the information about number of events for each arm and the rest 2 (or 3) columns contain the sample size for each arm. Number of columns ranges from 2 to 3, depending on the number of maximum arms in the trial data.}
 
 \item{outcome2}{A data frame for outcome 2, which has the same dimensions as outcome1.}
 
