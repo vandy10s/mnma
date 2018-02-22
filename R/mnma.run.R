@@ -1,5 +1,5 @@
 #' @title Run multivariate NMA anlaysis
-#' @description The function conducts bivariate NMA using an mnma.model object as an input
+#' @description The function conducts bivariate NMA using a mnma.model object as an input
 #' @param input mnma.model class data, which can be generated using mnma.model function
 #' @param inits a list with n.chains element (See \code{\link{bugs}})
 #' @param n.iter number of total iterations per chain (default: 5000)

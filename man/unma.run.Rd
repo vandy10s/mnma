@@ -28,7 +28,7 @@ unma.run(input, inits = NULL, n.iter = 5000, n.burnin = 2000,
 mnma.result class bugs summary result
 }
 \description{
-The function conducts univariate NMA using an mnma.model object as an input
+The function conducts univariate NMA using a mnma.model object as an input
 }
 \examples{
 \dontrun{
