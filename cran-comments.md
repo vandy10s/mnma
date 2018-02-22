@@ -1,27 +1,24 @@
-# mnma
+## Test environments
 
-## Let's see how to work on this markdown file. 
+* Windows 10 with the OpenBUGS installed
 
-Let's write down to explain this function and how to run it. 
+## R CMD check results
+There were no Errors or WARNINGs.
+There were 2 NOTE: Details are below
 
----
-**This is bold**
+There are ::: calls to the package's namespace in its code. A package
+  almost never needs to use ::: for its own objects:
+  'add.half.2arm' 'add.half.3arm' 'cont.trans' 'cont.trans.2arm'
+  'gen.y' 'gen.y.2arm' 'mul.model' 'sortbyna' 'sortbyna.2arm'
+  'tx.check' 'uni.model'
 
-*This is Italic*
-
-Two space after the sentence is the line change. 
----
-COMMAND TYPE: `ls -a in grey space`  
-
-To insert the code you use the apostrophe.
-```
-example(mnma)
-```
-
-For bullet points: 
-
-* First
-* Second
-
-1. First 
-2. Second
+checking R code for possible problems ... NOTE
+cont.trans: no visible global function definition for 'glm'
+cont.trans: no visible global function definition for 'binomial'
+cont.trans.2arm: no visible global function definition for 'glm'
+cont.trans.2arm: no visible global function definition for 'binomial'
+Undefined global functions or variables:
+  binomial glm
+Consider adding
+  importFrom("stats", "binomial", "glm")
+  
