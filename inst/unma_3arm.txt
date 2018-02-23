@@ -22,16 +22,16 @@ y[N2h+2*k-1:N2h+2*k]~dmnorm(mean[N2h+2*k-1:N2h+2*k],prec3A[k,,])}
 
 
 # Parameterization of the means
-for(i in 1:N2h) {                   
+for(i in 1:N2h) {
 	mean[i] <- dOUT1[T2[i]] - dOUT1[T1[i]]}
-	
-for(i in 1:(NS-N2h)) {                   
+
+for(i in 1:(NS-N2h)) {
 	mean[N2h+2*i-1] <- dOUT1[T2[N2h+i]] - dOUT1[T1[N2h+i]]
-	mean[N2h+2*i] <- dOUT1[T3[N2h+i]]- dOUT1[T1[N2h+i]]}	
-		
-# Priors		
-for(k in 1:(ref-1)) {dOUT1[k] ~ dnorm(0,.01)}
-for(k in (ref+1):NT) {dOUT1[k] ~ dnorm(0,.01)}		
+	mean[N2h+2*i] <- dOUT1[T3[N2h+i]]- dOUT1[T1[N2h+i]]}
+
+# Priors
+for(k in 1:(ref-1)) {dOUT1[k] ~ dnorm(0,.0001)}
+for(k in (ref+1):NT) {dOUT1[k] ~ dnorm(0,.0001)}
 psiR.sq<-psi1*psi1
 psi1~dunif(0,2)
 precision<-1/psiR.sq
@@ -39,15 +39,15 @@ precision<-1/psiR.sq
 #Estimated  Effect Sizes
 
 dOUT1[ref]<- 0
-for (c in 1:(ref-1))  { Eff.ref.O1[c]<- exp(dOUT1[c] - dOUT1[ref] )} 
-for (c in (ref+1):NT) { Eff.ref.O1[c]<- exp(dOUT1[c] - dOUT1[ref] )	} 
+for (c in 1:(ref-1))  { Eff.ref.O1[c]<- exp(dOUT1[c] - dOUT1[ref] )}
+for (c in (ref+1):NT) { Eff.ref.O1[c]<- exp(dOUT1[c] - dOUT1[ref] )	}
 for (c in 1:(NT-1)) {
 	for (k in (c+1):NT) {
-		ddOUT1[c,k] <- (dOUT1[k] - dOUT1[c])  
+		ddOUT1[c,k] <- (dOUT1[k] - dOUT1[c])
 		Eff.O1[c,k] <- exp(dOUT1[k] - dOUT1[c])
 		}
 	}
-	
+
 }
 
 
