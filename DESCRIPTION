@@ -1,11 +1,11 @@
 Package: mnma
 Type: Package
-Title: Multivariate Network Meta-Analysis(NMA) within a Bayesian Framework
+Title: Multivariate Network Meta-Analysis (NMA) within a Bayesian Framework
 Version: 0.1.0
 Date: 2018-02-22
 Author: Hyunsoo Hwang [aut,cre], Stacia M. DeSantis [aut]
 Maintainer: Hyunsoo Hwang <ilsanjoa@gmail.com>
-Description: A tool for running Bayesian multivaraite (or univariate) NMA of two binary outcomes using 'OpenBUGS' software.
+Description: A tool for running Bayesian multivaraite (or univariate) network meta-analysis (NMA) of two binary outcomes using 'OpenBUGS' software.
 Depends: R (>= 2.10)
 License: GPL-2
 LazyData: true

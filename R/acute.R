@@ -1,8 +1,8 @@
 #' @title Acute mania treatment dataset for efficacy and toleratiblity outcomes
 #'
-#' @description A dataset of 65 trials comparing 14 treatments for acute mania treatment. The dataset contains response and dropout rate information, both of which are binary outcome, along with treatments information.  
+#' @description A dataset of 65 trials comparing 14 treatments for acute mania treatment. The dataset contains response and dropout rate information, both of which are binary outcome, along with treatments information.
 #'
-#' @format A multivarite network-meta analysis dataset containig 65 rows with 15 columns. First 12 columns includes information about events and sample size of each arm for both outcomes. Last 3 columns contains treatments information. 
+#' @format A multivarite network-meta analysis dataset containig 65 rows with 15 columns. First 12 columns includes information about events and sample size of each arm for both outcomes. Last 3 columns contains treatments information. r1 and rt1 stand for number of events and sample size of T1 (arm 1) in efficacy outcome, respectively. So do d1 and dt1 in dropout outcome.
 #'
 #' @usage data(acute)
 #'
