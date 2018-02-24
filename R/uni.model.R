@@ -98,7 +98,7 @@ uni.model <- function(data1, data2, TX, noa = "3arm", ref = 1, parameters = "sim
   if (parameters=="simple"){
     parameters <- c( "dOUT1", "psi1")
   } else if (parameters=="detail"){
-    parameters <- c( "ddOUT1", "Eff.O1", "psi1")
+    parameters <- c( "ddOUT1", "psi1")
   } else if (parameters!="detail" & parameters!="simple"){
     stop("Choose either 'simple' or 'detail' for the list of parameters")
   }
