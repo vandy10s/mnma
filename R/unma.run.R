@@ -16,7 +16,8 @@
 #' # Run after data transformation using mnma.model function.
 #' res <- unma.run(data, n.iter=3000, n.burnin=1000)
 #' names(res$outcome1)
-#' res$outcome1$summary   # provides mean, standard deviation, and percentile information about log odds ratio
+#' # provides mean, standard deviation, and percentile information about log odds ratio
+#' res$outcome1$summary
 #' res$outcome2$summary
 #' }
 #'

@@ -35,7 +35,8 @@ The function conducts bivariate NMA using a \code{mnma.model} object as an input
 # Run after data transformation using mnma.model function.
 res <- mnma.run(data, n.iter=3000, n.burnin=1000)
 names(res)
-res$summary  # provides mean, standard deviation, and percentile information about log odds ratio
+# provides mean, standard deviation, and percentile information about log odds ratio
+res$summary
 }
 
 
