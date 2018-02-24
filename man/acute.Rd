@@ -4,7 +4,7 @@
 \name{acute}
 \alias{acute}
 \title{Acute mania treatment dataset for efficacy and toleratiblity outcomes}
-\format{A multivarite network-meta analysis dataset containig 65 rows with 15 columns. First 12 columns includes information about events and sample size of each arm for both outcomes. Last 3 columns contains treatments information. r1 and rt1 stand for number of events and sample size of T1 (arm 1) in efficacy outcome, respectively. So do d and dt in dropout outcome.}
+\format{A multivarite network-meta analysis dataset containig 65 rows with 15 columns. First 12 columns includes information about events and sample size of each arm for both outcomes. Last 3 columns contains treatments information. 'r1' and 'rt1' stand for number of events and sample size of 'T1' (arm 1) in efficacy outcome, respectively. So do 'd' and 'dt' in dropout outcome.}
 \source{
 Efthimiou, O., Mavridis, D., Riley, R.D., Cipriani, A. and Salanti, G., 2014. \emph{Joint synthesis of multiple correlated outcomes in networks of interventions}. Biostatistics, 16(1), pp.84-97.
 }

@@ -25,7 +25,7 @@ mnma.run(input, inits = NULL, n.iter = 5000, n.burnin = 2000,
 \item{codaPkg}{if FALSE (default) a bugs object is returned. (See and check \code{\link{bugs}})}
 }
 \value{
-mnma.result class bugs summary result
+mnma.result class bugs result. See \code{\link{bugs}} for details.
 }
 \description{
 The function conducts bivariate NMA using a mnma.model object as an input

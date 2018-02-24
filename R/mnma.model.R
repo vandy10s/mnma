@@ -1,5 +1,5 @@
 #' @title Create a data object for multivariate and univariate network meta-analysis (NMA)
-#' @description The function generates a data object for bugs operation, using outcome 1, outcome 2, and treatments inputs
+#' @description The function generates a data object for BUGS operation, using outcome 1, outcome 2, and treatments inputs
 #' @param outcome1 A data frame for outcome 1. First 2 (or 3) columns contain the information about number of events for each arm and the rest 2 (or 3) columns contain the sample size for each arm. Number of columns ranges from 2 to 3, depending on the number of maximum arms in the trial data.
 #' @param outcome2 A data frame for outcome 2, which has the same dimensions as outcome1.
 #' @param TX A data frame for tratments, which has maximum 3 treatment arms in 3 columns. The number of rows should coincide with outcome1 and outcome2. Each element needs to be numeric.
@@ -9,7 +9,7 @@
 #' @export
 #' @examples
 #' data(acute)
-#' # Split the dataset
+#' # Split the dataset to create a mnma data object
 #' outcome1 <- acute[,c(1:6)]     # outcome1
 #' outcome2 <- acute[,c(7:12)]    # outcome2
 #' TX    <- acute[,13:15]

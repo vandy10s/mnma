@@ -13,7 +13,7 @@
 #' @references Efthimiou et al. (2015) Biostatistics 16(1):84-97
 #' (\href{https://www.ncbi.nlm.nih.gov/pubmed/24992934}{PubMed})
 #' @seealso \code{\link{bugs}}
-#' @return mnma.result class bugs summary result
+#' @return mnma.result class bugs result. See \code{\link{bugs}} for details.
 #' @examples \dontrun{
 #' # Run after data transformation using mnma.model function.
 #' res <- mnma.run(data, n.iter=3000, n.burnin=1000)

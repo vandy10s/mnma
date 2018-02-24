@@ -11,7 +11,7 @@
 #' @import R2OpenBUGS
 #' @export
 #' @seealso \code{\link{bugs}}
-#' @return mnma.result class bugs summary result
+#' @return mnma.result class bugs result. See \code{\link{bugs}} for details.
 #' @examples \dontrun{
 #' # Run after data transformation using mnma.model function.
 #' res <- unma.run(data, n.iter=3000, n.burnin=1000)

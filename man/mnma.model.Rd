@@ -24,14 +24,14 @@ mnma.model(outcome1, outcome2, TX, noa = "3arm", ref = 1,
 An object of class 'mnma.model' that contains data information and parameter lists to estimate for multivariate and univariate NMA.
 }
 \description{
-The function generates a data object for bugs operation, using outcome 1, outcome 2, and treatments inputs
+The function generates a data object for BUGS operation, using outcome 1, outcome 2, and treatments inputs
 }
 \details{
 A 'simple' list for parameters includes log odds ratio (comparison) parameters between reference and all other treatments. A 'detail' list for parameters includes log odds ratio parameters between all treatments. Both cases include a correlation parameter and heterogeneity parameters for two outcomes.
 }
 \examples{
 data(acute)
-# Split the dataset
+# Split the dataset to create a mnma data object
 outcome1 <- acute[,c(1:6)]     # outcome1
 outcome2 <- acute[,c(7:12)]    # outcome2
 TX    <- acute[,13:15]
