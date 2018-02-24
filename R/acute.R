@@ -2,7 +2,7 @@
 #'
 #' @description A dataset of 65 trials comparing 14 treatments for acute mania treatment. The dataset contains response and dropout rate information, both of which are binary outcome, along with treatments information.
 #'
-#' @format A multivarite network-meta analysis dataset containig 65 rows with 15 columns. First 12 columns includes information about events and sample size of each arm for both outcomes. Last 3 columns contains treatments information. 'r1' and 'rt1' stand for number of events and sample size of 'T1' (arm 1) in efficacy outcome, respectively. So do 'd' and 'dt' in dropout outcome.
+#' @format A multivarite network-meta analysis dataset containig 65 rows with 18 columns. First 12 columns includes information about events and sample size of each arm for both outcomes. Last 6 columns contains treatments information with treatment name and corresponding number. For example, \code{r1} and \code{rt1} stand for number of events and sample size of \code{T1} (arm 1) in response outcome, respectively. So do \code{d} and \code{dt} in dropout outcome.
 #'
 #' @usage data(acute)
 #'

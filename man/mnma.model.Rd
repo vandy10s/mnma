@@ -14,20 +14,20 @@ mnma.model(outcome1, outcome2, TX, noa = "3arm", ref = 1,
 
 \item{TX}{A data frame for tratments, which has maximum 3 treatment arms in 3 columns. The number of rows should coincide with outcome1 and outcome2. Each element needs to be numeric.}
 
-\item{noa}{Maximum number of arms in the trial studies, which is either '2arm' or '3arm'. Note that number of arm is different from number of total treatments in the network.}
+\item{noa}{Maximum number of arms in the trial studies, which is either \code{2arm} or \code{3arm}. Note that number of arm is different from number of total treatments in the network.}
 
 \item{ref}{Reference treatment in the analysis in a numeric class.}
 
-\item{parameters}{List of parameters to infer in the analysis. They are either 'simple' or 'details' depending on comparisons.}
+\item{parameters}{List of parameters to infer in the analysis. They are either \code{simple} or \code{detail} depending on comparison type.}
 }
 \value{
-An object of class 'mnma.model' that contains data information and parameter lists to estimate for multivariate and univariate NMA.
+An object of class \code{mnma.model} that contains data information and parameter lists to estimate for multivariate and univariate network meta-analysis.
 }
 \description{
-The function generates a data object for BUGS operation, using outcome 1, outcome 2, and treatments inputs
+The function generates a data object for \code{mnma.run} or \code{unma.run} operation, using outcome 1, outcome 2, and treatments inputs
 }
 \details{
-A 'simple' list for parameters includes log odds ratio (comparison) parameters between reference and all other treatments. A 'detail' list for parameters includes log odds ratio parameters between all treatments. Both cases include a correlation parameter and heterogeneity parameters for two outcomes.
+A \code{simple} list for parameters includes log odds ratio (comparison) parameters between reference and all other treatments. A \code{detail} list for parameters includes log odds ratio parameters between all treatments. Both cases include a correlation parameter and heterogeneity parameters for two outcomes.
 }
 \examples{
 data(acute)
