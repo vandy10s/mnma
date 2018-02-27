@@ -28,7 +28,7 @@ unma.run(input, inits = NULL, n.iter = 5000, n.burnin = 2000,
 \code{mnma.result} class \code{bugs} result. See \code{\link[R2OpenBUGS]{bugs}} for details.
 }
 \description{
-The function conducts univariate NMA using a \code{mnma.model} object as an input
+The function conducts univariate NMA using a \code{mnma.model} object as an input. It uses \bold{OpenBUGS} software (through the \code{R2OpenBUGS} package).
 }
 \examples{
 \dontrun{
@@ -41,6 +41,13 @@ res$outcome2$summary
 }
 
 
+}
+\references{
+Lu and Ades (2006) Journal of the American Statistical Association 101(474): 447-459
+(\href{https://www.tandfonline.com/doi/abs/10.1198/016214505000001302}{doi: 10.1198/016214505000001302})
+
+Dias et al. (2010) Statistics in Medicine 29(7-8): 932-944
+(\href{http://onlinelibrary.wiley.com/doi/10.1002/sim.3767/full}{doi: 10.1002/sim.3767})
 }
 \seealso{
 \code{\link[R2OpenBUGS]{bugs}}

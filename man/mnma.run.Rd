@@ -28,7 +28,7 @@ mnma.run(input, inits = NULL, n.iter = 5000, n.burnin = 2000,
 \code{mnma.result} class \code{bugs} result. See \code{\link[R2OpenBUGS]{bugs}} for details.
 }
 \description{
-The function conducts bivariate NMA using a \code{mnma.model} object as an input
+The function conducts bivariate NMA using a \code{mnma.model} object as an input. It uses \bold{OpenBUGS} software (through the \code{R2OpenBUGS} package).
 }
 \examples{
 \dontrun{
@@ -43,7 +43,7 @@ res$summary
 }
 \references{
 Efthimiou et al. (2015) Biostatistics 16(1):84-97
-(\href{https://www.ncbi.nlm.nih.gov/pubmed/24992934}{PubMed})
+(\href{https://academic.oup.com/biostatistics/article/16/1/84/258780}{doi: 10.1093/biostatistics/kxu030})
 }
 \seealso{
 \code{\link[R2OpenBUGS]{bugs}}

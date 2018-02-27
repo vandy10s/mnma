@@ -12,6 +12,6 @@ Efthimiou, O., Mavridis, D., Riley, R.D., Cipriani, A. and Salanti, G., 2014. \e
 data(acute)
 }
 \description{
-A dataset of 65 trials comparing 14 treatments for acute mania treatment. The dataset contains response and dropout rate information, both of which are binary outcome, along with treatments information.
+A dataset of 65 trials comparing 14 treatments for acute mania treatment. The dataset contains response and dropout rate information, both of which are binary outcomes, along with treatments information.
 }
 \keyword{datasets}
