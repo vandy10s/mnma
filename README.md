@@ -1,6 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 mnma
+Hyunsoo Hwang & Stacia DeSantis
 ====
 
 The goal of mnma package is to make it easy to run Bayesian multivariate network meta-analysis (NMA) method by Efthimiou et al. [(Biostatistics, 2015)](https://www.ncbi.nlm.nih.gov/pubmed/?term=Joint+synthesis+of+multiple+correlated+outcomes+in+networks+of+interventions) using OpenBUGS. Although there are many packages for the univariate NMA, there is no package available for multivariate NMA due to its complexity. To run bugs command in this package, [OpenBUGS](http://www.openbugs.net/w/Downloads) has to be pre-installed in the local computer.
